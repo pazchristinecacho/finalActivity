@@ -40,7 +40,7 @@
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <breeze-nav-link
-                                    :href="route('dashboard')"
+                                    :href="route('stock.index')"
                                     :active="route().current('dashboard')"
                                 >
                                     Stocks

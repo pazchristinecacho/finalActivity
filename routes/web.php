@@ -36,7 +36,7 @@ Route::middleware('auth')
   
       Route::resource('sc', StockCategoryController::class);
   //  uncomment this      
-  //  Route::resource('stock', StockController::class);
+      Route::resource('stock', StockController::class);
     
 });
 

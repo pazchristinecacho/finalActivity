@@ -121,7 +121,7 @@ class StockCategoryController extends Controller
 
         $model->update($validate);
     
-        return Redirect::route('sc.index')->with("Success", "Stock Categorty Updated");
+        return Redirect::route('sc.index')->with("Success", "Stock Category Updated");
     }
 
     /**
