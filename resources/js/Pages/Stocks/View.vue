@@ -2,7 +2,7 @@
     <div>
         <Layout>
             <div class="flex justify-center w-full">
-                <div class="bg-white flex flex-col w-1/3 mt-20 p-6">
+                <div class="bg-white flex flex-col w-1/3 mt-10 p-6">
                     <div class="flex flex-row justify-between">
                         <h2 class="text-lg">Stock Form</h2>
 
@@ -86,11 +86,15 @@
                         </div>
 
                         <div class="flex flex-col pt-6">
-                            <label>Discontinued?
-                            <input type="checkbox" v-model="form.discontinued" class="ml-2" name="discontinued" id="discontinued"
-                                value="{{ old('discontinued') == 'N' ? 'Y' : 'N') }}"
-                            />
-                            <!-- 
+                            <label for="discontinued">Discontinued?
+                            <input class="mr-2" type="checkbox" id="discontinued" name="discontinued" true-value="Y" false-value="N"
+                                v-model="form.discontinued"/>Yes
+                            <input class="mr-2" type="checkbox" id="discontinued" name="discontinued" true-value="N" false-value="Y"
+                                v-model="form.discontinued"/>No</label>
+                            <!--
+                                <input type="checkbox" v-model="form.discontinued" class="ml-2" name="discontinued" id="discontinued"
+                                value="{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}"
+                            /> 
                                 "{{ checkbox('discontinued', '0', Input::old('discontinued'), $discontinued))"
                                 value="{{ old('discontinued') == 'N' ? 'Y' : 'N') }}" checked
                                 value="{{old('discontinued',true) ? 'checked' : '') }}"
@@ -106,7 +110,6 @@
                                     checked="1"
                                 /> 
                             --> 
-                            Yes</label>
                             <div class="text-red-700 text-sm">
                                 {{ errors.discontinued }}
                             </div>

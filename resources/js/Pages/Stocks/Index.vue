@@ -24,6 +24,7 @@
                 <th class="px-4 py-3">Barcode</th>
                 <th class="px-4 py-3">Discontinued</th>
                 <th class="px-4 py-3">Date Created</th>
+                <th class="px-4 py-3"></th>
               </tr>
 
               <tr

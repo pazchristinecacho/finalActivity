@@ -2,7 +2,7 @@
     <div>
         <Layout>
             <div class="flex justify-center w-full">
-                <div class="bg-white flex flex-col w-1/3 mt-20 p-6">
+                <div class="bg-white flex flex-col w-1/3 mt-10 p-6">
                     <h2 class="text-lg">Stocks Form</h2>
                     <form
                         id="stock-form"
@@ -77,16 +77,20 @@
                         </div>
 
                         <div class="flex flex-col pt-6">
-                            <label for="discontinuedY">Discontinued?
+                            <label for="discontinued">Discontinued?
+                            <input class="mr-2" type="checkbox" id="discontinued" name="discontinued" true-value="Y" false-value="N"
+                                v-model="form.discontinued"/>Yes
+                            <input class="mr-2" type="checkbox" id="discontinued" name="discontinued" true-value="N" false-value="Y"
+                                v-model="form.discontinued"/>No</label>
+                            <!--
                             <input
                                 type="checkbox"
                                 id="discontinued"
                                 name="discontinued"
-                                
                                 value="{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}"
                                 v-model="form.discontinued"
                                 class="ml-2"
-                            />  Yes</label>
+                            />  Yes</label>-->
                             <div class="text-red-700 text-sm">
                                 {{ errors.discontinued }}
                             </div>

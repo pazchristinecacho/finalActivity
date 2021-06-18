@@ -20,8 +20,6 @@ class StockController extends Controller
         $stock = Stock::all();
         return Inertia::render('Stocks/Index',
         ['stock'=>$stock]);
-        //$stocks=\App\Stocks::all();
-        //return view('stockindex',compact('stocks'));
     }
 
     /**
@@ -31,8 +29,6 @@ class StockController extends Controller
      */
     public function create()
     {   
-        //$dataSet4 = DB::table('tableName4')->pluck('fieldName');
-        //$stock_categorys = StockCategory::pluck('id')->toArray();
         $stock_categorys = StockCategory::all();
         return Inertia::render('Stocks/Create', ['stock_categorys'=>$stock_categorys]);
     }
@@ -65,12 +61,7 @@ class StockController extends Controller
         $model->description = $request->description;
         $model->uom = $request->uom;
         $model->barcode = $request->barcode;
-        if($request->get('discontinued') == true){
-            $model->discontinued = 'Y';
-        }
-        else{
-            $model->discontinued = 'N';
-        }
+        $model->discontinued = $request->discontinued;
         $model->photo_path = $request->photo_path;
 
         $model->save();
@@ -91,7 +82,8 @@ class StockController extends Controller
         $stock_categorys = StockCategory::all();
         //return Inertia::render('Stocks/Create', ['stock_categorys'=>$stock_categorys]);
         $model =Stock::find($id);
-        return Inertia::render('Stocks/View',['model'=>$model, 'stock_categorys'=>$stock_categorys]);
+        return Inertia::render('Stocks/View',
+            ['model'=>$model, 'stock_categorys'=>$stock_categorys]);
     }
 
     /**
@@ -133,12 +125,7 @@ class StockController extends Controller
         $model->description = $request->description;
         $model->uom = $request->uom;
         $model->barcode = $request->barcode;
-        if($request->get('discontinued') == true){
-            $model->discontinued = 'Y';
-        }
-        else{
-            $model->discontinued = 'N';
-        }
+        $model->discontinued = $request->discontinued;
         $model->photo_path = $request->photo_path;
 
         $model->update();
@@ -158,9 +145,8 @@ class StockController extends Controller
         try{
             Stock::find($id)->delete();
             return Redirect::route('stock.index')->with('success', 'Stock deleted.');
-           }catch (\Exception$e) {
-         
+        }catch (\Exception$e) {
             return Redirect::route('stock.index')->with('error', $e->getMessage());
-           }
+        }
     }
 }

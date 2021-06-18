@@ -19377,7 +19377,7 @@ var _hoisted_1 = {
   "class": "flex justify-center w-full"
 };
 var _hoisted_2 = {
-  "class": "bg-white flex flex-col w-1/3 mt-20 p-6"
+  "class": "bg-white flex flex-col w-1/3 mt-10 p-6"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", {
@@ -19455,18 +19455,20 @@ var _hoisted_19 = {
   "class": "flex flex-col pt-6"
 };
 var _hoisted_20 = {
-  "for": "discontinuedY"
+  "for": "discontinued"
 };
 
 var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Discontinued? ");
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Yes");
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Yes ");
 
-var _hoisted_23 = {
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("No");
+
+var _hoisted_24 = {
   "class": "text-red-700 text-sm"
 };
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex flex-col pt-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
   type: "submit",
@@ -19483,7 +19485,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
         id: "stock-form",
         name: "stock-form",
-        onSubmit: _cache[7] || (_cache[7] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+        onSubmit: _cache[8] || (_cache[8] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return $setup.submit && $setup.submit.apply($setup, arguments);
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
@@ -19551,19 +19553,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.barcode]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errors.barcode), 1
       /* TEXT */
       )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+        "class": "mr-2",
         type: "checkbox",
         id: "discontinued",
         name: "discontinued",
-        value: "{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}",
+        "true-value": "Y",
+        "false-value": "N",
         "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
           return $setup.form.discontinued = $event;
-        }),
-        "class": "ml-2"
+        })
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.discontinued]]), _hoisted_22]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errors.discontinued), 1
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.discontinued]]), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+        "class": "mr-2",
+        type: "checkbox",
+        id: "discontinued",
+        name: "discontinued",
+        "true-value": "N",
+        "false-value": "Y",
+        "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+          return $setup.form.discontinued = $event;
+        })
+      }, null, 512
+      /* NEED_PATCH */
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.discontinued]]), _hoisted_23]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n                            <input\r\n                                type=\"checkbox\"\r\n                                id=\"discontinued\"\r\n                                name=\"discontinued\"\r\n                                value=\"{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}\"\r\n                                v-model=\"form.discontinued\"\r\n                                class=\"ml-2\"\r\n                            />  Yes</label>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errors.discontinued), 1
       /* TEXT */
-      )]), _hoisted_24], 32
+      )]), _hoisted_25], 32
       /* HYDRATE_EVENTS */
       )])])];
     }),
@@ -19637,7 +19652,9 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "class": "px-4 py-3"
 }, "Discontinued"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
   "class": "px-4 py-3"
-}, "Date Created")], -1
+}, "Date Created"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("th", {
+  "class": "px-4 py-3"
+})], -1
 /* HOISTED */
 );
 
@@ -19759,7 +19776,7 @@ var _hoisted_1 = {
   "class": "flex justify-center w-full"
 };
 var _hoisted_2 = {
-  "class": "bg-white flex flex-col w-1/3 mt-20 p-6"
+  "class": "bg-white flex flex-col w-1/3 mt-10 p-6"
 };
 var _hoisted_3 = {
   "class": "flex flex-row justify-between"
@@ -19841,16 +19858,21 @@ var _hoisted_20 = {
 var _hoisted_21 = {
   "class": "flex flex-col pt-6"
 };
+var _hoisted_22 = {
+  "for": "discontinued"
+};
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Discontinued? ");
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Discontinued? ");
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Yes");
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Yes ");
 
-var _hoisted_24 = {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("No");
+
+var _hoisted_26 = {
   "class": "text-red-700 text-sm"
 };
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex flex-col pt-6"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
   type: "submit",
@@ -19881,7 +19903,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
         id: "stock-form",
         name: "stock-form",
-        onSubmit: _cache[7] || (_cache[7] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+        onSubmit: _cache[8] || (_cache[8] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return $setup.submit && $setup.submit.apply($setup, arguments);
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
@@ -19951,20 +19973,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* NEED_PATCH */
       ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.form.barcode]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errors.barcode), 1
       /* TEXT */
-      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", null, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+      )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+        "class": "mr-2",
         type: "checkbox",
+        id: "discontinued",
+        name: "discontinued",
+        "true-value": "Y",
+        "false-value": "N",
         "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
           return $setup.form.discontinued = $event;
-        }),
-        "class": "ml-2",
-        name: "discontinued",
-        id: "discontinued",
-        value: "{{ old('discontinued') == 'N' ? 'Y' : 'N') }}"
+        })
       }, null, 512
       /* NEED_PATCH */
-      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.discontinued]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \r\n                                \"{{ checkbox('discontinued', '0', Input::old('discontinued'), $discontinued))\"\r\n                                value=\"{{ old('discontinued') == 'N' ? 'Y' : 'N') }}\" checked\r\n                                value=\"{{old('discontinued',true) ? 'checked' : '') }}\"\r\n                                @if(old('discontinued', $discontinued)) checked @endif\r\n                                \"{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}\"\r\n                                <input\r\n                                    type=\"checkbox\"\r\n                                    id=\"discontinued\"\r\n                                    name=\"discontinued\"\r\n                                    v-model=\"form.discontinued\"\r\n                                    class=\"ml-2\"\r\n                                    value=\"{{old('discontinued' == 'Y') ? 'checked' : 'N'}}\"\r\n                                    checked=\"1\"\r\n                                /> \r\n                            "), _hoisted_23]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errors.discontinued), 1
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.discontinued]]), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+        "class": "mr-2",
+        type: "checkbox",
+        id: "discontinued",
+        name: "discontinued",
+        "true-value": "N",
+        "false-value": "Y",
+        "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+          return $setup.form.discontinued = $event;
+        })
+      }, null, 512
+      /* NEED_PATCH */
+      ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.discontinued]]), _hoisted_25]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n                                <input type=\"checkbox\" v-model=\"form.discontinued\" class=\"ml-2\" name=\"discontinued\" id=\"discontinued\"\r\n                                value=\"{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}\"\r\n                            /> \r\n                                \"{{ checkbox('discontinued', '0', Input::old('discontinued'), $discontinued))\"\r\n                                value=\"{{ old('discontinued') == 'N' ? 'Y' : 'N') }}\" checked\r\n                                value=\"{{old('discontinued',true) ? 'checked' : '') }}\"\r\n                                @if(old('discontinued', $discontinued)) checked @endif\r\n                                \"{{ old('discontinued', isset($discontinued) ? 'checked' : 'Y') }}\"\r\n                                <input\r\n                                    type=\"checkbox\"\r\n                                    id=\"discontinued\"\r\n                                    name=\"discontinued\"\r\n                                    v-model=\"form.discontinued\"\r\n                                    class=\"ml-2\"\r\n                                    value=\"{{old('discontinued' == 'Y') ? 'checked' : 'N'}}\"\r\n                                    checked=\"1\"\r\n                                /> \r\n                            "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.errors.discontinued), 1
       /* TEXT */
-      )]), _hoisted_25], 32
+      )]), _hoisted_27], 32
       /* HYDRATE_EVENTS */
       )])])];
     }),
